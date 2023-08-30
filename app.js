@@ -1,3 +1,9 @@
+/**
+ * 
+ * @param {string} tagName 
+ * @param {object} attributes 
+ * @returns {HTMLElement}
+ */
 function createElement(tagName, attributes = {}) {
     const element = document.createElement(tagName)
     for (const [attribute, value] of Object.entries(attributes)) {
@@ -8,6 +14,12 @@ function createElement(tagName, attributes = {}) {
     return element
 }
 
+/**
+ * Ajoute un bloc commentaire dans le DOM de la page html
+ * @param {string} firstname 
+ * @param {string} lasttname 
+ * @param {string} message 
+ */
 function addComment(firstname, lasttname, message) {
     const commentList = document.querySelector('#comment-list')
     const frameComment = createElement('div', {
@@ -32,6 +44,10 @@ function addComment(firstname, lasttname, message) {
     frameCommentAuthor.append(commentAuthor)
 }
 
+/**
+ * valide le formulaire de la page web
+ * @param {Event} e 
+ */
 function onSubmit(e) {
     e.preventDefault()
     const alert = document.querySelector('#error-message')
